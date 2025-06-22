@@ -8,7 +8,7 @@ import ReportView from './components/ReportView';
 export default function CompetitionReviewApp() {
   const saveToServer = async (data) => {
     try {
-      await fetch('http://localhost:4000/save', {
+      await fetch('https://competition-review.onrender.com/save', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
@@ -33,7 +33,7 @@ export default function CompetitionReviewApp() {
   const wsRef = useRef(null);
 
   useEffect(() => {
-    fetch('http://localhost:4000/load')
+    fetch('https://competition-review.onrender.com/load')
       .then(res => res.json())
       .then(data => {
         setCompetitors(data.competitors || []);
