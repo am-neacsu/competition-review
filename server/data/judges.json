@@ -1,0 +1,19 @@
+[
+  {
+    "id": 1,
+    "name": "Admin",
+    "password": "admin",
+    "isAdmin": true,
+    "assignedCompetitorIds": []
+  },
+  {
+    "id": 1748155803355,
+    "name": "1234",
+    "password": "1234",
+    "isAdmin": false,
+    "assignedCompetitorIds": [
+      1748155819434,
+      1748155823185
+    ]
+  }
+]
