@@ -8,7 +8,7 @@ import ReportView from './components/ReportView';
 export default function CompetitionReviewApp() {
   const saveToServer = async (data) => {
     try {
-      await fetch('https://competition-review.onrender.com/save', {
+      await fetch('https://90c7948d-9a15-4825-911b-4865f61c2aff-00-qt9lvhce4vwp.riker.replit.dev/save', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data)
@@ -33,7 +33,7 @@ export default function CompetitionReviewApp() {
   const wsRef = useRef(null);
 
   useEffect(() => {
-    fetch('https://competition-review.onrender.com/load')
+    fetch('https://90c7948d-9a15-4825-911b-4865f61c2aff-00-qt9lvhce4vwp.riker.replit.dev/load')
       .then(res => res.json())
       .then(data => {
         setCompetitors(data.competitors || []);
@@ -157,7 +157,7 @@ export default function CompetitionReviewApp() {
   const clearAllData = () => {
     if (window.confirm("Are you sure you want to delete all data?")) {
       setCompetitors([]);
-      setJudges([]);
+      setJudges(prev => prev.filter(j => j.username === 'admin'));
       setReviews([]);
       setCategories([]);
       saveToServer({ competitors: [], reviews: [], judges: [], categories: [] });
